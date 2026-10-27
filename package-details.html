@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Package Details</title><link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="booking-page-shell">
+    <h1 class="booking-page-heading">Choose Your Package</h1>
+    <p class="booking-page-intro">Select whether you want flight charges included before continuing to booking.</p>
+    <section class="booking-package-summary" aria-live="polite">
+      <h2 class="booking-summary-title" id="details-package-name">Your selected package</h2>
+      <p class="booking-summary-meta"><span id="details-package-duration">Package duration</span> · Base package price: <strong id="details-package-price">—</strong> per person</p>
+    </section>
+    <form id="details-choice-form">
+      <fieldset class="booking-choice-list">
+        <legend class="booking-choice-legend">Choose flight option</legend>
+        <label class="booking-choice-option">
+          <input class="booking-choice-radio" type="radio" name="flightOption" value="with" required>
+          <span class="booking-choice-copy"><span class="booking-choice-title">With flight charges</span><span class="booking-choice-description">Flight booking will be included in your package quote. Final airfare and total price will be confirmed by the travel team.</span></span>
+        </label>
+        <label class="booking-choice-option">
+          <input class="booking-choice-radio" type="radio" name="flightOption" value="without" required>
+          <span class="booking-choice-copy"><span class="booking-choice-title">Without flight charges</span><span class="booking-choice-description">The displayed base package price excludes airfare. You can arrange flights separately.</span></span>
+        </label>
+      </fieldset>
+      <p class="booking-disclaimer">Note: Prices shown are sample base prices. Flight costs depend on travel dates, availability, and departure city; no flight fee is added automatically on this demo page.</p>
+      <button class="booking-primary-button" type="submit">Continue to Book Now</button>
+    </form>
+    <a class="booking-secondary-link" href="index.html">← Back to packages</a>
+  </main>
+  <script>
+    const detailsParams = new URLSearchParams(window.location.search);
+    const detailsPackage = detailsParams.get("package") || "Travel Package";
+    const detailsPrice = Number(detailsParams.get("price") || 0);
+    const detailsDuration = detailsParams.get("duration") || "Duration varies";
+    document.getElementById("details-package-name").textContent = detailsPackage;
+    document.getElementById("details-package-duration").textContent = detailsDuration;
+    document.getElementById("details-package-price").textContent =
+      detailsPrice ? "₹" + detailsPrice.toLocaleString("en-IN") : "Price on request";
+
+    document.getElementById("details-choice-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const selectedFlight = new FormData(this).get("flightOption");
+      if (!selectedFlight) return;
+      const bookingParams = new URLSearchParams({
+        package: detailsPackage,
+        price: String(detailsPrice),
+        duration: detailsDuration,
+        flight: selectedFlight
+      });
+      window.location.href = "booknow.html?" + bookingParams.toString();
+    });
+  </script>
+</body>
+</html>

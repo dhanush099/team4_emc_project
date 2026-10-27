@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Now</title><link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="booking-page-shell">
+    <h1 class="booking-page-heading">Book Your Trip</h1>
+    <p class="booking-page-intro">Enter your details and our travel team can follow up with availability and the final quote.</p>
+    <section class="booking-package-summary">
+      <h2 class="booking-summary-title" id="booknow-package-name">Selected package</h2>
+      <p class="booking-summary-meta"><span id="booknow-package-duration">Duration</span> · Base price: <strong id="booknow-package-price">—</strong> per person</p>
+      <p class="booking-summary-meta">Flight option: <strong id="booknow-flight-choice">—</strong></p>
+    </section>
+    <form id="booknow-form">
+      <div class="booking-form-grid">
+        <label class="booking-form-field">Full name<input class="booking-form-input" name="fullName" type="text" placeholder="Enter your full name" required></label>
+        <label class="booking-form-field">Email address<input class="booking-form-input" name="email" type="email" placeholder="you@example.com" required></label>
+        <label class="booking-form-field">Phone number<input class="booking-form-input" name="phone" type="tel" placeholder="Enter phone number" required></label>
+        <label class="booking-form-field">Number of travellers<input class="booking-form-input" name="travellers" type="number" min="1" value="2" required></label>
+        <label class="booking-form-field">Preferred travel date<input class="booking-form-input" name="travelDate" type="date" required></label>
+        <label class="booking-form-field">Departure city<input class="booking-form-input" name="departureCity" type="text" placeholder="e.g. Chennai" required></label>
+      </div>
+      <p class="booking-disclaimer">Demo only: this form does not send or save your details. Connect it to a backend or booking service to receive real reservations.</p>
+      <button class="booking-primary-button" type="submit">Submit Booking Request</button>
+      <p class="booking-confirmation-note" id="booknow-confirmation" role="status">Your demo booking request is ready! No reservation has been made or sent.</p>
+    </form>
+    <a class="booking-secondary-link" href="index.html">← Back to packages</a>
+  </main>
+  <script>
+    const booknowParams = new URLSearchParams(window.location.search);
+    const booknowPackage = booknowParams.get("package") || "Travel Package";
+    const booknowPrice = Number(booknowParams.get("price") || 0);
+    const booknowDuration = booknowParams.get("duration") || "Duration varies";
+    const booknowFlight = booknowParams.get("flight") === "with" ? "With flight charges" : "Without flight charges";
+    document.getElementById("booknow-package-name").textContent = booknowPackage;
+    document.getElementById("booknow-package-duration").textContent = booknowDuration;
+    document.getElementById("booknow-package-price").textContent =
+      booknowPrice ? "₹" + booknowPrice.toLocaleString("en-IN") : "Price on request";
+    document.getElementById("booknow-flight-choice").textContent = booknowFlight;
+    document.getElementById("booknow-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      document.getElementById("booknow-confirmation").style.display = "block";
+    });
+  </script>
+</body>
+</html>
