@@ -1,1 +1,84 @@
-
+/* About page styles*/
+main.about-page {
+  background: var(--light-bg);
+  padding-bottom: 1px;
+}
+.our-story {
+  margin: 20px 7% 0;
+  padding: 32px 5%;
+  gap: 40px;
+  border-radius: 16px;
+}
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 16px;
+  margin-top: 20px;
+  padding: 28px 7%;
+  text-align: center;
+  background: var(--primary);
+  color: #fff;
+}
+.stats h3 {
+  font-size: 30px;
+}
+.title {
+  text-align: center;
+  padding: 30px 7% 0;
+  font-size: clamp(22px, 3vw, 30px);
+  letter-spacing: -1px;
+}
+.values {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+  margin: 14px 7%;
+  padding: 18px;
+  border-radius: 16px;
+}
+.value {
+  padding: 20px;
+  border-radius: 14px;
+}
+.value span {
+  font-size: 28px;
+}
+.value h3 {
+  margin: 6px 0 4px;
+}
+.value p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #53616c;
+}
+.v1 {
+  background: #e1f4ef;
+}
+.v2 {
+  background: #efe8fb;
+}
+.v3 {
+  background: #e8eefc;
+}
+.v4 {
+  background: #fde8ef;
+}
+.v1 span {
+  color: #0f766e;
+}
+.v2 span {
+  color: #7c3aed;
+}
+.v3 span {
+  color: #2563eb;
+}
+.v4 span {
+  color: #db2777;
+}
+.contact-section {
+  background: #fff;
+  border: 1px solid #d7ece6;
+  margin-bottom: 30px;
+  padding: 45px 20px;
+}
