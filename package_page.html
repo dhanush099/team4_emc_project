@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,19 +12,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     </head>
   <body>
-<!--package-->    
- <header class="travel-site-header">
-   
-   <nav class="travel-category-bar" aria-label="Travel categories">
-      <a class="travel-category-item travel-category-active" href="#honeymoon"><span class="travel-category-icon">♡</span><span class="travel-category-label">Honeymoon</span></a>
-      <a class="travel-category-item" href="#family"><span class="travel-category-icon">♧</span><span class="travel-category-label">Family</span></a>
-      <a class="travel-category-item" href="#adventure"><span class="travel-category-icon">△</span><span class="travel-category-label">Adventure</span></a>
-      <a class="travel-category-item" href="#beach"><span class="travel-category-icon">☼</span><span class="travel-category-label">Beach</span></a>
-      <a class="travel-category-item" href="#cultural"><span class="travel-category-icon">⌂</span><span class="travel-category-label">Cultural</span></a>
-      
-    </nav>
-  </header>
+    
+<!-- Navigation -->
 
+          <header class="navbar">
+            <a href="#" class="logo">Wander<span>ly.</span></a>
+
+            <nav>
+              <a href="index.html">Home</a>
+              <a href="destinations.html">Destinations</a>
+              <a href="package_page.html">Packages</a>
+              <a href="about.html">About</a>
+            </nav>
+
+            <a href="contact.html" class="nav-button">Contact Us</a>
+          </header>
+<!--package page-->
   <main id="home">
     <section class="travel-hero-section">
       <div class="travel-hero-overlay">
@@ -40,9 +44,16 @@
         <h2 class="travel-section-title">Find • Roam • Venture • Discover • Getaways</h2>
         <p class="travel-section-description">Choose a category to explore handpicked getaways.</p>
       </div>
+      <nav class="travel-category-bar" aria-label="Travel categories">
+      <a class="travel-category-item travel-category-active" href="#honeymoon"><span class="travel-category-icon">♡</span><span class="travel-category-label">Honeymoon</span></a>
+      <a class="travel-category-item" href="#family"><span class="travel-category-icon">♧</span><span class="travel-category-label">Family</span></a>
+      <a class="travel-category-item" href="#adventure"><span class="travel-category-icon">△</span><span class="travel-category-label">Adventure</span></a>
+      <a class="travel-category-item" href="#beach"><span class="travel-category-icon">☼</span><span class="travel-category-label">Beach</span></a>
+      <a class="travel-category-item" href="#cultural"><span class="travel-category-icon">⌂</span><span class="travel-category-label">Cultural</span></a>
       
+    </nav>
     </section>
-
+ 
     <section class="travel-destination-section" id="honeymoon">
       <div class="travel-section-heading travel-section-heading-left">
         <p class="travel-section-eyebrow">MADE FOR TWO</p><h2 class="travel-section-title">Honeymoon escapes</h2>
@@ -155,7 +166,12 @@
       <a class="travel-hero-button" href="#packages">Explore Packages <span aria-hidden="true">→</span></a>
     </section>
   </main>
-
+ <!-- Footer -->
+    <footer class="footer">
+        <a href="home.html" class="logo">wander<span>ly.</span></a>
+        <p>Made for curious minds and open roads.</p>
+        <p>© 2026 Wanderly Travel.</p>
+    </footer>
  
 
 </body>
