@@ -17,13 +17,13 @@
 
 <body>
 
-    <!-- Navigation -->
+    <!-- Shared team navbar -->
     <header class="navbar">
         <a href="index.html" class="logo">Wander<span>ly.</span></a>
 
-        <nav class="nav-links">
+        <nav>
             <a href="index.html">Home</a>
-            <a href="destinations.html" class="active">Destinations</a>
+            <a href="destinations.html" class="dest-nav-active">Destinations</a>
             <a href="packages.html">Packages</a>
             <a href="blog.html">Blog</a>
         </nav>
@@ -31,12 +31,13 @@
         <a href="contact.html" class="nav-button">Contact Us</a>
     </header>
 
-    <main>
-        <!-- Page heading -->
-        <section class="destinations-section">
-            <div class="page-heading">
+    <main class="dest-page">
+
+        <section class="dest-section">
+
+            <div class="dest-heading">
                 <div>
-                    <span class="eyebrow">FIND YOUR NEXT ESCAPE</span>
+                    <span class="dest-eyebrow">FIND YOUR NEXT ESCAPE</span>
                     <h1>Explore Destinations</h1>
                     <p>Find your next unforgettable getaway.</p>
                 </div>
@@ -44,34 +45,34 @@
                 <span class="dest-count" id="destCount">12 destinations</span>
             </div>
 
-            <!-- Search -->
-            <div class="search-wrapper">
-                <span class="search-icon" aria-hidden="true">&#9906;</span>
+            <!-- Search bar -->
+            <div class="dest-search">
+                <span class="dest-search-icon" aria-hidden="true">⌕</span>
                 <input type="search" id="destinationSearch" placeholder="Search destinations or countries..."
                     aria-label="Search destinations or countries">
-                <button id="clearSearch" class="clear-search" type="button" aria-label="Clear search">×</button>
+                <button id="clearSearch" type="button" aria-label="Clear search">×</button>
             </div>
 
             <!-- Category filters -->
-            <div class="filter-row">
-                <div class="filter-buttons" aria-label="Filter destinations">
-                    <button type="button" class="filter-btn active" data-category="all">All</button>
-                    <button type="button" class="filter-btn" data-category="beach">🏖 Beach</button>
-                    <button type="button" class="filter-btn" data-category="mountain">🏔 Mountain</button>
-                    <button type="button" class="filter-btn" data-category="city">🏙 City</button>
+            <div class="dest-filter-row">
+                <div class="dest-filter-buttons">
+                    <button type="button" class="dest-filter-btn active" data-category="all">All</button>
+                    <button type="button" class="dest-filter-btn" data-category="beach">🏖 Beach</button>
+                    <button type="button" class="dest-filter-btn" data-category="mountain">🏔 Mountain</button>
+                    <button type="button" class="dest-filter-btn" data-category="city">🏙 City</button>
                 </div>
 
-                <span class="results-label" id="resultsLabel">Showing all destinations</span>
+                <span class="dest-results-label" id="resultsLabel">Showing all destinations</span>
             </div>
 
             <!-- Destination cards -->
             <div class="dest-grid" id="destinationGrid">
 
-                <article class="dest-card" data-category="beach">
-                    <div class="dest-image">
+                <article class="dest-card-item" data-category="beach">
+                    <div class="dest-card-image">
                         <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80"
-                            alt="Tropical landscape in Bali" loading="lazy">
-                        <span class="dest-tag">Beach</span>
+                            alt="Bali tropical landscape" loading="lazy">
+                        <span class="dest-card-tag">Beach</span>
                     </div>
                     <div class="dest-card-content">
                         <span class="dest-location">Indonesia</span>
@@ -79,16 +80,16 @@
                         <p>Tropical beaches, lush rice terraces and peaceful temples.</p>
                         <div class="dest-card-bottom">
                             <div><small>Starting from</small><strong>₹24,999</strong></div>
-                            <a href="packages.html" class="explore-link">Explore <span>↗</span></a>
+                            <a href="packages.html" class="dest-explore-link">Explore ↗</a>
                         </div>
                     </div>
                 </article>
 
-                <article class="dest-card" data-category="city">
-                    <div class="dest-image">
+                <article class="dest-card-item" data-category="city">
+                    <div class="dest-card-image">
                         <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80"
                             alt="Eiffel Tower in Paris" loading="lazy">
-                        <span class="dest-tag">City</span>
+                        <span class="dest-card-tag">City</span>
                     </div>
                     <div class="dest-card-content">
                         <span class="dest-location">France</span>
@@ -96,16 +97,16 @@
                         <p>Romantic streets, iconic landmarks and charming cafés.</p>
                         <div class="dest-card-bottom">
                             <div><small>Starting from</small><strong>₹49,999</strong></div>
-                            <a href="packages.html" class="explore-link">Explore <span>↗</span></a>
+                            <a href="packages.html" class="dest-explore-link">Explore ↗</a>
                         </div>
                     </div>
                 </article>
 
-                <article class="dest-card" data-category="mountain">
-                    <div class="dest-image">
+                <article class="dest-card-item" data-category="mountain">
+                    <div class="dest-card-image">
                         <img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=800&q=80"
-                            alt="Scenic mountain landscape" loading="lazy">
-                        <span class="dest-tag">Mountain</span>
+                            alt="Swiss mountain scenery" loading="lazy">
+                        <span class="dest-card-tag">Mountain</span>
                     </div>
                     <div class="dest-card-content">
                         <span class="dest-location">Switzerland</span>
@@ -113,16 +114,16 @@
                         <p>Snowy peaks, alpine villages and breathtaking views.</p>
                         <div class="dest-card-bottom">
                             <div><small>Starting from</small><strong>₹79,999</strong></div>
-                            <a href="packages.html" class="explore-link">Explore <span>↗</span></a>
+                            <a href="packages.html" class="dest-explore-link">Explore ↗</a>
                         </div>
                     </div>
                 </article>
 
-                <article class="dest-card" data-category="city">
-                    <div class="dest-image">
+                <article class="dest-card-item" data-category="city">
+                    <div class="dest-card-image">
                         <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80"
-                            alt="Traditional streets in Kyoto" loading="lazy">
-                        <span class="dest-tag">City</span>
+                            alt="Traditional Kyoto streets" loading="lazy">
+                        <span class="dest-card-tag">City</span>
                     </div>
                     <div class="dest-card-content">
                         <span class="dest-location">Japan</span>
@@ -130,16 +131,16 @@
                         <p>Ancient temples, tranquil gardens and Japanese culture.</p>
                         <div class="dest-card-bottom">
                             <div><small>Starting from</small><strong>₹59,999</strong></div>
-                            <a href="packages.html" class="explore-link">Explore <span>↗</span></a>
+                            <a href="packages.html" class="dest-explore-link">Explore ↗</a>
                         </div>
                     </div>
                 </article>
 
-                <article class="dest-card" data-category="beach">
-                    <div class="dest-image">
+                <article class="dest-card-item" data-category="beach">
+                    <div class="dest-card-image">
                         <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80"
-                            alt="Clear turquoise water in the Maldives" loading="lazy">
-                        <span class="dest-tag">Beach</span>
+                            alt="Maldives turquoise waters" loading="lazy">
+                        <span class="dest-card-tag">Beach</span>
                     </div>
                     <div class="dest-card-content">
                         <span class="dest-location">Maldives</span>
@@ -147,16 +148,16 @@
                         <p>Crystal-clear waters, coral reefs and overwater villas.</p>
                         <div class="dest-card-bottom">
                             <div><small>Starting from</small><strong>₹39,999</strong></div>
-                            <a href="packages.html" class="explore-link">Explore <span>↗</span></a>
+                            <a href="packages.html" class="dest-explore-link">Explore ↗</a>
                         </div>
                     </div>
                 </article>
 
-                <article class="dest-card" data-category="city">
-                    <div class="dest-image">
+                <article class="dest-card-item" data-category="city">
+                    <div class="dest-card-image">
                         <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80"
-                            alt="Dubai skyline" loading="lazy">
-                        <span class="dest-tag">City</span>
+                            alt="Dubai city skyline" loading="lazy">
+                        <span class="dest-card-tag">City</span>
                     </div>
                     <div class="dest-card-content">
                         <span class="dest-location">United Arab Emirates</span>
@@ -164,16 +165,16 @@
                         <p>Desert adventures, modern architecture and luxury shopping.</p>
                         <div class="dest-card-bottom">
                             <div><small>Starting from</small><strong>₹34,999</strong></div>
-                            <a href="packages.html" class="explore-link">Explore <span>↗</span></a>
+                            <a href="packages.html" class="dest-explore-link">Explore ↗</a>
                         </div>
                     </div>
                 </article>
 
-                <article class="dest-card" data-category="city">
-                    <div class="dest-image">
+                <article class="dest-card-item" data-category="city">
+                    <div class="dest-card-image">
                         <img src="https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=800&q=80"
-                            alt="Venice canals and historic buildings" loading="lazy">
-                        <span class="dest-tag">City</span>
+                            alt="Venice canals" loading="lazy">
+                        <span class="dest-card-tag">City</span>
                     </div>
                     <div class="dest-card-content">
                         <span class="dest-location">Italy</span>
@@ -181,16 +182,16 @@
                         <p>Romantic canals, historic architecture and winding lanes.</p>
                         <div class="dest-card-bottom">
                             <div><small>Starting from</small><strong>₹54,999</strong></div>
-                            <a href="packages.html" class="explore-link">Explore <span>↗</span></a>
+                            <a href="packages.html" class="dest-explore-link">Explore ↗</a>
                         </div>
                     </div>
                 </article>
 
-                <article class="dest-card" data-category="beach">
-                    <div class="dest-image">
+                <article class="dest-card-item" data-category="beach">
+                    <div class="dest-card-image">
                         <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
-                            alt="Sunny tropical beach" loading="lazy">
-                        <span class="dest-tag">Beach</span>
+                            alt="Sunny tropical beach in Thailand" loading="lazy">
+                        <span class="dest-card-tag">Beach</span>
                     </div>
                     <div class="dest-card-content">
                         <span class="dest-location">Thailand</span>
@@ -198,16 +199,16 @@
                         <p>Golden beaches, island hopping and vibrant nightlife.</p>
                         <div class="dest-card-bottom">
                             <div><small>Starting from</small><strong>₹29,999</strong></div>
-                            <a href="packages.html" class="explore-link">Explore <span>↗</span></a>
+                            <a href="packages.html" class="dest-explore-link">Explore ↗</a>
                         </div>
                     </div>
                 </article>
 
-                <article class="dest-card" data-category="city">
-                    <div class="dest-image">
+                <article class="dest-card-item" data-category="city">
+                    <div class="dest-card-image">
                         <img src="https://images.unsplash.com/photo-1496588152823-86ff7695e68f?auto=format&fit=crop&w=800&q=80"
                             alt="New York City buildings" loading="lazy">
-                        <span class="dest-tag">City</span>
+                        <span class="dest-card-tag">City</span>
                     </div>
                     <div class="dest-card-content">
                         <span class="dest-location">United States</span>
@@ -215,16 +216,16 @@
                         <p>Iconic landmarks, famous museums and endless energy.</p>
                         <div class="dest-card-bottom">
                             <div><small>Starting from</small><strong>₹89,999</strong></div>
-                            <a href="packages.html" class="explore-link">Explore <span>↗</span></a>
+                            <a href="packages.html" class="dest-explore-link">Explore ↗</a>
                         </div>
                     </div>
                 </article>
 
-                <article class="dest-card" data-category="beach">
-                    <div class="dest-image">
+                <article class="dest-card-item" data-category="beach">
+                    <div class="dest-card-image">
                         <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80"
-                            alt="White buildings overlooking the sea in Santorini" loading="lazy">
-                        <span class="dest-tag">Beach</span>
+                            alt="Santorini coastal buildings" loading="lazy">
+                        <span class="dest-card-tag">Beach</span>
                     </div>
                     <div class="dest-card-content">
                         <span class="dest-location">Greece</span>
@@ -232,16 +233,16 @@
                         <p>Whitewashed villages, blue domes and sunset views.</p>
                         <div class="dest-card-bottom">
                             <div><small>Starting from</small><strong>₹64,999</strong></div>
-                            <a href="packages.html" class="explore-link">Explore <span>↗</span></a>
+                            <a href="packages.html" class="dest-explore-link">Explore ↗</a>
                         </div>
                     </div>
                 </article>
 
-                <article class="dest-card" data-category="mountain">
-                    <div class="dest-image">
+                <article class="dest-card-item" data-category="mountain">
+                    <div class="dest-card-image">
                         <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80"
-                            alt="Majestic Himalayan mountain peaks" loading="lazy">
-                        <span class="dest-tag">Mountain</span>
+                            alt="Himalayan mountain peaks" loading="lazy">
+                        <span class="dest-card-tag">Mountain</span>
                     </div>
                     <div class="dest-card-content">
                         <span class="dest-location">India</span>
@@ -249,16 +250,16 @@
                         <p>Majestic peaks, scenic trails and peaceful escapes.</p>
                         <div class="dest-card-bottom">
                             <div><small>Starting from</small><strong>₹14,999</strong></div>
-                            <a href="packages.html" class="explore-link">Explore <span>↗</span></a>
+                            <a href="packages.html" class="dest-explore-link">Explore ↗</a>
                         </div>
                     </div>
                 </article>
 
-                <article class="dest-card" data-category="mountain">
-                    <div class="dest-image">
+                <article class="dest-card-item" data-category="mountain">
+                    <div class="dest-card-image">
                         <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=800&q=80"
-                            alt="Beautiful alpine nature and mountains" loading="lazy">
-                        <span class="dest-tag">Mountain</span>
+                            alt="Alpine nature and mountain landscape" loading="lazy">
+                        <span class="dest-card-tag">Mountain</span>
                     </div>
                     <div class="dest-card-content">
                         <span class="dest-location">Austria</span>
@@ -266,43 +267,40 @@
                         <p>Mountain lakes, charming villages and scenic journeys.</p>
                         <div class="dest-card-bottom">
                             <div><small>Starting from</small><strong>₹69,999</strong></div>
-                            <a href="packages.html" class="explore-link">Explore <span>↗</span></a>
+                            <a href="packages.html" class="dest-explore-link">Explore ↗</a>
                         </div>
                     </div>
                 </article>
 
             </div>
 
-            <!-- Empty search result message -->
-            <div class="empty-state" id="emptyState" hidden>
-                <div class="empty-icon">⌕</div>
+            <div class="dest-empty-state" id="emptyState" hidden>
                 <h2>No destinations found</h2>
-                <p>Try another destination or choose a different category.</p>
-                <button type="button" id="resetFilters" class="reset-btn">Show all destinations</button>
+                <p>Try another search or select a different category.</p>
+                <button type="button" id="resetFilters">Show all destinations</button>
             </div>
+
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Shared team footer -->
     <footer class="footer">
-        <a href="index.html" class="logo">Wander<span>ly.</span></a>
+        <a href="index.html" class="logo">wander<span>ly.</span></a>
         <p>Made for curious minds and open roads.</p>
         <p>© 2026 Wanderly Travel.</p>
     </footer>
-
-    <!-- JavaScript -->
     <script>
 
         document.addEventListener("DOMContentLoaded", () => {
             const searchInput = document.getElementById("destinationSearch");
-            const clearSearch = document.getElementById("clearSearch");
-            const filterButtons = document.querySelectorAll(".filter-btn");
-            const cards = document.querySelectorAll(".dest-card");
-            const destCount = document.getElementById("destCount");
+            const clearButton = document.getElementById("clearSearch");
+            const filterButtons = document.querySelectorAll(".dest-filter-btn");
+            const cards = document.querySelectorAll(".dest-card-item");
+            const count = document.getElementById("destCount");
             const resultsLabel = document.getElementById("resultsLabel");
-            const emptyState = document.getElementById("emptyState");
-            const resetFilters = document.getElementById("resetFilters");
             const grid = document.getElementById("destinationGrid");
+            const emptyState = document.getElementById("emptyState");
+            const resetButton = document.getElementById("resetFilters");
 
             let activeCategory = "all";
 
@@ -310,87 +308,79 @@
                 const query = searchInput.value.trim().toLowerCase();
                 let visibleCount = 0;
 
-                cards.forEach((card) => {
+                cards.forEach(card => {
                     const searchableText = card.textContent.toLowerCase();
-                    const category = card.dataset.category;
-
                     const matchesSearch = searchableText.includes(query);
                     const matchesCategory =
                         activeCategory === "all" ||
-                        category === activeCategory;
+                        card.dataset.category === activeCategory;
 
-                    const isVisible = matchesSearch && matchesCategory;
+                    const visible = matchesSearch && matchesCategory;
 
-                    card.hidden = !isVisible;
+                    card.hidden = !visible;
 
-                    if (isVisible) {
-                        visibleCount++;
-                    }
+                    if (visible) visibleCount++;
                 });
 
-                destCount.textContent =
+                count.textContent =
                     `${visibleCount} destination${visibleCount === 1 ? "" : "s"}`;
 
-                if (visibleCount === cards.length) {
-                    resultsLabel.textContent = "Showing all destinations";
-                } else {
-                    resultsLabel.textContent =
-                        `Showing ${visibleCount} of ${cards.length} destinations`;
-                }
+                resultsLabel.textContent =
+                    visibleCount === cards.length
+                        ? "Showing all destinations"
+                        : `Showing ${visibleCount} of ${cards.length} destinations`;
 
-                emptyState.hidden = visibleCount !== 0;
                 grid.hidden = visibleCount === 0;
-                clearSearch.classList.toggle("visible", query.length > 0);
+                emptyState.hidden = visibleCount !== 0;
+
+                clearButton.classList.toggle(
+                    "dest-clear-visible",
+                    query.length > 0
+                );
             }
 
             searchInput.addEventListener("input", updateDestinations);
 
-            clearSearch.addEventListener("click", () => {
+            clearButton.addEventListener("click", () => {
                 searchInput.value = "";
                 searchInput.focus();
                 updateDestinations();
             });
 
-            filterButtons.forEach((button) => {
+            filterButtons.forEach(button => {
                 button.addEventListener("click", () => {
                     activeCategory = button.dataset.category;
 
-                    filterButtons.forEach((filterButton) => {
-                        const isActive = filterButton === button;
-                        filterButton.classList.toggle("active", isActive);
-                        filterButton.setAttribute(
-                            "aria-pressed",
-                            String(isActive)
-                        );
+                    filterButtons.forEach(filter => {
+                        const active = filter === button;
+                        filter.classList.toggle("active", active);
+                        filter.setAttribute("aria-pressed", String(active));
                     });
 
                     updateDestinations();
                 });
-            });
 
-            resetFilters.addEventListener("click", () => {
-                searchInput.value = "";
-                activeCategory = "all";
-
-                filterButtons.forEach((button) => {
-                    const isAll = button.dataset.category === "all";
-                    button.classList.toggle("active", isAll);
-                    button.setAttribute("aria-pressed", String(isAll));
-                });
-
-                updateDestinations();
-            });
-
-            filterButtons.forEach((button) => {
                 button.setAttribute(
                     "aria-pressed",
                     String(button.dataset.category === "all")
                 );
             });
 
+            resetButton.addEventListener("click", () => {
+                searchInput.value = "";
+                activeCategory = "all";
+
+                filterButtons.forEach(button => {
+                    const active = button.dataset.category === "all";
+                    button.classList.toggle("active", active);
+                    button.setAttribute("aria-pressed", String(active));
+                });
+
+                updateDestinations();
+            });
+
             updateDestinations();
         });
-
 
     </script>
 
